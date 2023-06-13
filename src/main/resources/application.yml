@@ -1,0 +1,55 @@
+server:
+  port: 8082
+
+spring:
+  profiles:
+    active: prod
+
+---
+
+spring:
+  profiles:
+    dev:
+      datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        password: Narkatari@123
+        url: jdbc:mysql://localhost:3306/mukeshdb
+        username: root
+
+      jpa:
+        hibernate:
+          ddl-auto: update
+        show-sql: true
+
+      welcome:
+        message: Welcome to India
+
+    qa:
+      datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        password: Narkatari@123
+        url: jdbc:mysql://localhost:3306/mukeshdb-qa
+        username: root
+
+      jpa:
+        hibernate:
+          ddl-auto: update
+        show-sql: true
+
+      welcome:
+        message: Welcome to India
+
+  prod:
+    datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      password: Narkatari@123
+      url: jdbc:mysql://localhost:3306/mukeshdb-prod
+      username: root
+
+    jpa:
+      hibernate:
+        ddl-auto: update
+      show-sql: true
+
+    welcome:
+      message: Welcome to India
